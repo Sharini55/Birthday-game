@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pixel-ui {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.pixel-ui::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.22) 0px,
+    rgba(0, 0, 0, 0.22) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.35;
+  z-index: 10;
+}
+
+.retroCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.hudText,
+.levelText,
+.scoreText,
+.trophyTitle {
+  font-family: "Press Start 2P", monospace;
+  text-transform: uppercase;
+}
+
+.stickerPin,
+.lockedBox,
+.roadMapPin {
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
