@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --pixel-font: 'Press Start 2P', monospace;
+}
+
+.pixel-ui,
+.pixel-ui * {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.pixel-ui {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.pixel-ui::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.20) 0px,
+    rgba(0, 0, 0, 0.20) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  z-index: 50;
+}
+
+.hudText,
+.levelText,
+.scoreText,
+.trophyTitle {
+  font-family: var(--pixel-font);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stickerPin,
+.lockedBox,
+.trophyCard,
+.roadMapPin {
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.lockedBox {
+  background: #a0a0a0;
+  color: #fff;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.trophyCard {
+  background: #d9d9d9;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+canvas.retroCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
